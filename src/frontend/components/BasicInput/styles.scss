@@ -1,0 +1,30 @@
+@import '../../sass/variables';
+
+.BasicInput {
+  gap: 4px;
+  display: grid;
+  padding: 10px;
+  border: 1px solid $gray-500;
+  transition: $transition-base;
+  border-radius: $border-radius;
+}
+
+.BasicInput.active {
+  border: 2px solid $black;
+}
+
+.BasicInput p {
+  font-weight: bold;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.BasicInput input {
+  border: none;
+  outline: none;
+  font-size: large;
+}
+
+.BasicInput input::placeholder {
+  color: $gray-600;
+}
