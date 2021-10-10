@@ -1,0 +1,39 @@
+.Calculator {
+  gap: 20px;
+  display: grid;
+}
+
+.Calculator__body {
+  gap: 10px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.Calculator__numbers {
+  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.Calculator__numbers .btn-result {
+  grid-column-end: span 2;
+}
+
+.Calculator__operations {
+  gap: 10px;
+  display: grid;
+}
+
+.Calculator__operations .btn-outline {
+  font-size: large;
+  color: var(--secondary-color);
+  box-shadow: var(--box-shadow-sm);
+  background-color: var(--gray-200);
+  border: 1px solid var(--gray-400);
+}
+.Calculator__numbers .btn-white {
+  color: var(--black);
+  box-shadow: var(--box-shadow-sm);
+  background-color: var(--gray-400);
+  border: 1px solid var(--gray-500);
+}

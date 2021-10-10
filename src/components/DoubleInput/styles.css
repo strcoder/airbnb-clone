@@ -1,0 +1,33 @@
+.DoubleInput {
+  display: grid;
+  transition: var(--transition-base);
+  border-radius: var(--border-radius);
+  grid-template-columns: 1fr 0 1fr;
+}
+
+.DoubleInput input {
+  width: 100%;
+}
+
+.DoubleInput hr {
+  height: 80%;
+  align-self: center;
+}
+
+.DoubleInput .BasicInput:first-child {
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.DoubleInput .BasicInput:last-child {
+  border-left: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.DoubleInput .BasicInput.active:first-child,
+.DoubleInput .BasicInput.active:last-child {
+  border: 2px solid var(--black);
+  border-radius: var(--border-radius);
+}

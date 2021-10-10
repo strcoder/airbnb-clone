@@ -1,0 +1,28 @@
+.BasicInput {
+  gap: 4px;
+  display: grid;
+  padding: 10px;
+  border: 1px solid var(--gray-500);
+  transition: var(--transition-base);
+  border-radius: var(--border-radius);
+}
+
+.BasicInput.active {
+  border: 2px solid var(--black);
+}
+
+.BasicInput p {
+  font-weight: bold;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.BasicInput input {
+  border: none;
+  outline: none;
+  font-size: large;
+}
+
+.BasicInput input::placeholder {
+  color: var(--gray-600);
+}

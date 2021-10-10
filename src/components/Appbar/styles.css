@@ -1,0 +1,44 @@
+.Appbar {
+  display: flex;
+  padding: 10px 0;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.Appbar__logo {
+  width: 32px;
+  height: 32px;
+}
+
+.Appbar__nav--list {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.Appbar__nav--list li {
+  display: flex;
+  justify-content: center;
+}
+
+.Appbar__nav--list li:first-child {
+  display: none;
+}
+
+.Appbar__nav--list a {
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 10px 14px;
+}
+
+@media screen and (min-width: 768px) {
+  .Appbar__logo {
+    width: 100px;
+  }
+
+  .Appbar__nav--list li:first-child {
+    display: flex;
+  }
+}

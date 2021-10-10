@@ -1,0 +1,79 @@
+.Hero {
+  display: grid;
+  padding: 25px;
+}
+
+.Hero__form {
+  gap: 20px;
+  display: grid;
+}
+
+.Hero__form--title {
+  gap: 8px;
+  display: grid;
+}
+
+.Hero__form--title p {
+  color: var(--gray);
+}
+
+.Hero__form button span {
+  display: flex;
+  padding: 0 2.5px;
+}
+
+.Hero__image {
+  width: 100%;
+  display: none;
+    height: 100%;
+}
+
+.Hero__image img {
+  object-fit: cover;
+  border-radius: var(--border-radius);
+}
+
+@media screen and (min-width: 768px) {
+  .Hero {
+    padding: 25px 50px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .Hero__form {
+    z-index: 2;
+    padding: 20px;
+    grid-row-start: 1;
+    align-self: center;
+    grid-column-start: 1;
+    grid-column-end: span 2;
+    max-width: 450px;
+    box-shadow: var(--box-shadow);
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+  }
+
+  .Hero__image {
+    z-index: 1;
+    display: flex;
+    grid-row-start: 1;
+    grid-column-start: 2;
+    grid-column-end: span 3;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .Hero {
+    padding: 25px 10%;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .Hero__image {
+    grid-column-end: span 4;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .Hero {
+    padding: 50px 15%;
+  }
+}
