@@ -1,0 +1,88 @@
+@import '../../sass/variables';
+
+.Reservations {
+  gap: 25px;
+  display: grid;
+  padding: 25px;
+}
+
+.Reservations__container {
+  gap: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.Reservation {
+  gap: 4px;
+  width: 100%;
+  display: grid;
+}
+
+.Reservation__image {
+  display: flex;
+  width: 100%;
+  height: 200px;
+  & img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: $border-radius;
+  }
+}
+
+.Reservation__info {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  justify-content: space-between;
+  & p {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+.Reservation__info--score {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  & span, small {
+    display: flex;
+  }
+  & span {
+    color: $secondary-color;
+  }
+  & small {
+    color: $gray-700;
+    font-size: 0.8rem;
+  }
+}
+
+.Reservation__details {
+  gap: 4px;
+  display: grid;
+  align-items: center;
+  & p:first-child {
+    color: $gray-700;
+    overflow: hidden;
+    font-size: 1.2rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  & p:nth-child(2) {
+    & span {
+      padding-left: 5px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .Reservations {
+    padding: 25px 50px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .Reservations {
+    padding: 50px 15%;
+  }
+}

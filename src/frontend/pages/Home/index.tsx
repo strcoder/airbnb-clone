@@ -4,6 +4,7 @@ import About from '../../components/About';
 import Hero from '../../components/Hero';
 import Lodging from '../../containers/Lodging';
 import Promotion from '../../containers/Promotion';
+import Reservations from '../../containers/Reservations';
 import './styles.scss';
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
       <Promotion />
       <Lodging />
       <About />
+      <Reservations />
     </section>
   );
 };
