@@ -1,0 +1,48 @@
+@import '../../sass/variables';
+
+.About {
+  gap: 25px;
+  padding: 25px;
+  display: grid;
+  & hr {
+    border: none;
+    border-top: 1px solid $gray-400;
+  }
+  & hr:first-child {
+    margin-bottom: 25px;
+  }
+  & hr:last-child {
+    margin-top: 50px;
+  }
+}
+
+.About__card {
+  gap: 4px;
+  display: grid;
+  & span {
+    font-size: 2rem;
+  }
+  & p:nth-child(2) {
+    font-size: 1.2rem;
+  }
+  & p:nth-child(3) {
+    color: $gray;
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .About {
+    padding: 50px 50px;
+    grid-template-columns: repeat(3, 1fr);
+    & hr {
+      grid-column-end: span 3;
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .About {
+    padding: 50px 15%;
+  }
+}

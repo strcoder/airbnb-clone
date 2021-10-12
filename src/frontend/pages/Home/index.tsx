@@ -1,4 +1,5 @@
 import React from 'react';
+import About from '../../components/About';
 
 import Hero from '../../components/Hero';
 import Lodging from '../../containers/Lodging';
@@ -11,6 +12,7 @@ const Home = () => {
       <Hero />
       <Promotion />
       <Lodging />
+      <About />
     </section>
   );
 };
