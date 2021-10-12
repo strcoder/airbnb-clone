@@ -1,5 +1,6 @@
 import React from 'react';
 import About from '../../components/About';
+import Helper from '../../components/Helper';
 
 import Hero from '../../components/Hero';
 import Lodging from '../../containers/Lodging';
@@ -15,6 +16,7 @@ const Home = () => {
       <Lodging />
       <About />
       <Reservations />
+      <Helper />
     </section>
   );
 };

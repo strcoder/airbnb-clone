@@ -1,0 +1,46 @@
+@import '../../sass/variables';
+
+.Helper {
+  gap: 4px;
+  display: grid;
+  padding: 50px 25px;
+  & p {
+    color: $gray;
+    padding-bottom: 15px;
+  }
+}
+
+.Breadcrum {
+  display: flex;
+  padding: 50px 0;
+  flex-wrap: wrap;
+  align-items: center;
+  & a {
+    display: flex;
+    color: $black;
+    font-weight: bold;
+    align-items: center;
+    text-decoration: underline;
+  }
+  & a:last-child {
+    color: $gray;
+    font-weight: normal;
+    text-decoration: none;
+  }
+  & span {
+    display: flex;
+    padding: 0 2.5px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .Helper {
+    padding: 50px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .Helper {
+    padding: 50px 15%;
+  }
+}
