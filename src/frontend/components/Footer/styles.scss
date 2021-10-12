@@ -1,0 +1,71 @@
+@import '../../sass/variables';
+
+.Footer {
+  row-gap: 10px;
+  display: grid;
+  padding: 25px;
+  & hr {
+    border: none;
+    border-bottom: 1px solid $gray-400;
+  }
+  & > p:nth-child(2) {
+    padding-top: 20px;
+  }
+  & ul {
+    display: flex;
+    list-style: none;
+    justify-content: flex-start;
+    grid-template-columns: repeat(auto-fit, minmax(25px, 1fr));
+  }
+}
+
+.Footer__links {
+  display: grid;
+  & a {
+    display: flex;
+    color: $gray-800;
+    align-items: center;
+    transition: 0.2s ease;
+  }
+  & a:hover {
+    text-decoration: underline;
+  }
+  & a span {
+    display: flex;
+  }
+  & a span:first-child {
+    color: $gray-500;
+  }
+}
+
+.Footer__socialMedia {
+  display: grid;
+  & a {
+    color: $black;
+    padding: 0 5px;
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .Footer {
+    padding: 50px;
+    align-items: center;
+    grid-template-columns: auto auto 1fr;
+    & hr {
+      grid-column-end: span 3;
+    }
+    & > nav {
+      padding-top: 20px;
+    }
+  }
+  .Footer__socialMedia {
+    justify-self: flex-end;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .Footer {
+    padding: 50px 15%;
+  }
+}
