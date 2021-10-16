@@ -8,8 +8,6 @@ import './sass/index.scss';
 
 const history = createBrowserHistory();
 const app = document.getElementById('app');
-const state = document.getElementById('preloadedState');
-document.body.removeChild(state);
 
 ReactDOM.render(
   <Router history={history}>
