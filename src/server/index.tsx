@@ -4,7 +4,6 @@ import cookieParser from 'cookie-parser';
 import { StaticRouter } from 'react-router-dom';
 import { renderToString } from 'react-dom/server';
 
-import { Provider } from '../frontend/context';
 import ServerApp from '../frontend/routes/ServerApp';
 import { ENV, PORT } from './config';
 
@@ -15,7 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.disable('x-powered-by');
 
-const setResponse = (html: string, preloadedState: object) => {
+const setResponse = (html: string) => {
   return (
     `<!DOCTYPE html>
     <html lang="es">
@@ -40,9 +39,6 @@ const setResponse = (html: string, preloadedState: object) => {
       <body>
         <div id="app">${html}</div>
         <div id="modal"></div>
-        <script type="text/javascript" id="preloadedState">
-          window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')};
-        </script>
         <script type="text/javascript" src="index.js"></script>
       </body>
     </html>`
@@ -50,19 +46,15 @@ const setResponse = (html: string, preloadedState: object) => {
 };
 
 const renderApp = async (req: express.Request, res: express.Response) => {
-  const initialState = {};
-
   const html = renderToString(
-    <Provider initialState={initialState}>
-      <StaticRouter location={req.url} context={{}}>
-        <ServerApp />
-      </StaticRouter>
-    </Provider>,
+    <StaticRouter location={req.url} context={{}}>
+      <ServerApp />
+    </StaticRouter>,
   );
 
   res
     .set('Content-Security-Policy', "default-src *; img-src * 'self' blob: data: http://*;  style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'")
-    .send(setResponse(html, initialState));
+    .send(setResponse(html));
 };
 
 app.post('/api/cost', (req, res, next) => {
