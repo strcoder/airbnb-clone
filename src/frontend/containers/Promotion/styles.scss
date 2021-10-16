@@ -72,6 +72,23 @@
   border-radius: $border-radius;
 }
 
+.PromotionModal {
+  gap: 20px;
+  display: grid;
+  max-width: 320px;
+  & p:last-child {
+    font-size: 1.2rem;
+    text-align: center;
+    justify-self: center;
+    color: $secondary-color;
+  }
+}
+
+.PromotionModal .form-control {
+  gap: 20px;
+  display: grid;
+}
+
 @media screen and (min-width: 768px) {
   .Promotion {
     padding: 25px 50px;
@@ -80,6 +97,10 @@
   .Promotion__info .btn-link {
     position: relative;
     left: -110px;
+  }
+
+  .PromotionModal {
+    max-width: 500px;
   }
 }
 

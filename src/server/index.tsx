@@ -76,7 +76,7 @@ app.post('/api/cost', (req, res, next) => {
 
 app.post('/api/host', (req, res, next) => {
   const { rooms, bathrooms, garden } = req.body;
-  const price = (rooms * 800) + (bathrooms * 500) + (garden * 1000);
+  const price = (rooms * 2500) + (bathrooms * 2000) + (garden * 4000);
 
   res.status(200).json({
     data: price,

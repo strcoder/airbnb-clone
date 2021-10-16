@@ -1,0 +1,64 @@
+@import '../../sass/variables';
+
+.Lodging {
+  display: grid;
+  align-items: center;
+}
+
+.Lodging__image {
+  max-width: 500px;
+  height: 250px;
+  & img {
+    height: 250px;
+    object-fit: cover;
+    border-radius: 7px;
+  }
+}
+
+.Lodging__header {
+  display: flex;
+  align-items: center;
+  & span {
+    padding: 2.5px;
+    font-size: 1.2rem;
+    color: $primary-color;
+  }
+}
+
+.Lodging__body {
+  padding-bottom: 15px;
+  & p {
+    color: $gray;
+    max-width: 100%;
+    overflow: hidden;
+    font-size: 0.9rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+  }
+}
+
+.Lodging__footer {
+  display: grid;
+  column-gap: 8px;
+  grid-template-columns: auto 1fr;
+  & p {
+    font-size: 1.2rem;
+  }
+  & span {
+    color: $gray;
+  }
+}
+
+.Lodging__footer--avatar {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  border-radius: 50%;
+  grid-row-end: span 2;
+  border: 1px solid $gray-400;
+  & img {
+    object-fit: cover;
+  }
+}

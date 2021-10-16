@@ -1,5 +1,6 @@
 import React from 'react';
 import { AiFillStar } from 'react-icons/ai';
+import './styles.scss';
 
 type LodgingCardProps = {
   name: string;
@@ -7,9 +8,15 @@ type LodgingCardProps = {
   country: string;
   comment: string;
   houseImg: string;
-}
+};
 
-const LodgingCard = ({ name, country, houseImg, avatar, comment }: LodgingCardProps) => {
+const LodgingCard = ({
+  name,
+  country,
+  houseImg,
+  avatar,
+  comment,
+}: LodgingCardProps) => {
   return (
     <div className='Lodging'>
       <figure className='Lodging__image'>
