@@ -5,6 +5,7 @@ type BasicInputProps = {
   type?: string;
   label?: string;
   inputRef?: any;
+  readOnly?: boolean;
   defaultValue?: any;
   placeholder?: string;
   setDefaultValue?: any;
@@ -14,6 +15,7 @@ const BasicInput = ({
   type,
   label,
   inputRef,
+  readOnly,
   placeholder,
   defaultValue,
   setDefaultValue,
@@ -25,6 +27,7 @@ const BasicInput = ({
       <p>{label}</p>
       <input
         ref={inputRef}
+        readOnly={readOnly}
         value={defaultValue}
         type={type || 'text'}
         placeholder={placeholder}

@@ -1,3 +1,5 @@
+@import '../../sass/variables';
+
 .Modal {
   top: 0;
   left: 0;
@@ -8,7 +10,7 @@
   position: fixed;
   align-items: center;
   justify-items: center;
-  transition: var(--transition-base);
+  transition: $transition-base;
 }
 
 .Modal__close {
@@ -24,9 +26,9 @@
   min-width: 250px;
   grid-row-start: 1;
   grid-column-start: 1;
-  background-color: var(--white);
-  border: 1px solid var(--gray-400);
-  border-radius: var(--border-radius);
+  background-color: $white;
+  border: 1px solid $gray-400;
+  border-radius: $border-radius;
 }
 
 .ModalWrap > button {
@@ -37,10 +39,10 @@
   padding: 10px;
   display: flex;
   align-items: center;
+  background-color: $gray-200;
+  border-radius: $border-radius;
   justify-content: space-between;
-  background-color: var(--gray-200);
-  border-radius: var(--border-radius);
-  border-bottom: 1px solid var(--gray-400);
+  border-bottom: 1px solid $gray-400;
 }
 
 .ModalWrap__header button {

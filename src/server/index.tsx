@@ -65,6 +65,44 @@ const renderApp = async (req: express.Request, res: express.Response) => {
     .send(setResponse(html, initialState));
 };
 
+app.post('/api/cost', (req, res, next) => {
+  const { price, quantity, discount } = req.body;
+  const total = price * quantity;
+  const result = total - ((total * discount) / 100);
+  res.status(200).json({
+    data: result,
+  });
+});
+
+app.post('/api/host', (req, res, next) => {
+  const { rooms, bathrooms, garden } = req.body;
+  const price = (rooms * 800) + (bathrooms * 500) + (garden * 1000);
+
+  res.status(200).json({
+    data: price,
+  });
+});
+
+app.post('/api/discount', (req, res, next) => {
+  const { code } = req.body;
+  const codes = [
+    { code: 'agvcoder', discount: 20 },
+    { code: 'uamc', discount: 10 },
+  ];
+  const codeValid = codes.find((item) => item.code === code);
+  if (codeValid) {
+    res.status(200).json({
+      data: codeValid.discount,
+    });
+    return;
+  }
+  res.status(404).json({
+    data: {},
+    message: 'Discount invalid',
+  });
+
+});
+
 app.use(express.static(`${__dirname}/public`));
 app.use(express.static(`${__dirname}/assets`));
 app.get('*', renderApp);

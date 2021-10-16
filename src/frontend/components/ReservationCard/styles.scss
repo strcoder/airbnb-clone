@@ -1,0 +1,103 @@
+@import '../../sass/variables';
+
+.Reservation {
+  gap: 4px;
+  width: 100%;
+  display: grid;
+}
+
+.Reservation__image {
+  display: flex;
+  width: 100%;
+  height: 200px;
+  & img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: $border-radius;
+  }
+}
+
+.Reservation__info {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  justify-content: space-between;
+  & p {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+.Reservation__info--score {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  & span, small {
+    display: flex;
+  }
+  & span {
+    color: $secondary-color;
+  }
+  & small {
+    color: $gray-700;
+    font-size: 0.8rem;
+  }
+}
+
+.Reservation__details {
+  gap: 4px;
+  display: grid;
+  align-items: center;
+  & p:first-child {
+    color: $gray-700;
+    overflow: hidden;
+    font-size: 1.2rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  & p:nth-child(2) {
+    & span {
+      padding-left: 5px;
+    }
+  }
+}
+
+.ReservationModal {
+  gap: 20px;
+  display: grid;
+  max-width: 320px;
+  & p:nth-child(2),
+  & p:last-child {
+    font-size: 1.4rem;
+    text-align: center;
+    justify-self: center;
+  }
+}
+
+.ReservationModal .form-control {
+  gap: 20px;
+  display: grid;
+  & p:last-child {
+    font-size: 1rem;
+    justify-self: center;
+    color: $primary-color;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .ReservationModal {
+    max-width: 530px;
+  }
+
+  .ReservationModal .form-control {
+    grid-template-columns: repeat(2, 1fr);
+    & button,
+    & .BasicInput:nth-child(3) {
+      grid-column-end: span 2;
+    }
+    & p:last-child {
+      grid-column-end: span 2;
+    }
+  }
+}
